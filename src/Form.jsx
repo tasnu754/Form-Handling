@@ -91,7 +91,6 @@ const FormHandle = () => {
 
     let isValid = true;
 
-    // Validate main form
     if (!formData.username.trim()) {
       newErrors.username = "Username is required";
       isValid = false;
@@ -102,7 +101,6 @@ const FormHandle = () => {
       isValid = false;
     }
 
-    // Validate additional fields
     const newAdditionalErrors = additionalFields.map((field, index) => {
       const fieldErrors = {
         additionalInput: "",
@@ -131,11 +129,9 @@ const FormHandle = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Form is valid, handle submission
       console.log("Form submitted successfully!");
       console.log("Main form data:", formData);
       console.log("Additional fields:", additionalFields);
-      // Add your submission logic here
     } else {
       console.log("Form has errors!");
     }
